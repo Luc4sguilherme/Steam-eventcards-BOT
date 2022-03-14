@@ -34,6 +34,13 @@ export default (offer) => {
         .replace(/{EVENTNAME}/g, main.eventName)
         .replace('{OFFERID}', offer.id);
     }
+    if (offer.data('commandused').search(/SETS/) !== -1) {
+      msg += messages.trade.notificationToAdmin.buy
+        .replace('{CURRENCY}', `${offer.data('amountofsets')} cards set(s)`)
+        .replace('{EVENTCARDS}', offer.data('amountofeventcards'))
+        .replace(/{EVENTNAME}/g, main.eventName)
+        .replace('{OFFERID}', offer.id);
+    }
   }
 
   if (offer.data('commandused').search(/SELL/) !== -1) {
@@ -61,6 +68,13 @@ export default (offer) => {
     if (offer.data('commandused').search(/GEMS/) !== -1) {
       msg += messages.trade.notificationToAdmin.sell
         .replace('{CURRENCY}', `${offer.data('amountofgems')} gem(s)`)
+        .replace('{EVENTCARDS}', offer.data('amountofeventcards'))
+        .replace(/{EVENTNAME}/g, main.eventName)
+        .replace('{OFFERID}', offer.id);
+    }
+    if (offer.data('commandused').search(/SETS/) !== -1) {
+      msg += messages.trade.notificationToAdmin.sell
+        .replace('{CURRENCY}', `${offer.data('amountofsets')} cards set(s)`)
         .replace('{EVENTCARDS}', offer.data('amountofeventcards'))
         .replace(/{EVENTNAME}/g, main.eventName)
         .replace('{OFFERID}', offer.id);

@@ -16,12 +16,15 @@ export default {
 
   admins: [''],
 
+  steamApiKey: '',
+
   // Mysterious, Winter or Summer
   eventName: 'Winter',
 
   eventAppID: 1658760,
 
   maxCheck: {
+    sets: 10000,
     gems: 100000,
     keys: 100,
   },

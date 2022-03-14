@@ -4,8 +4,13 @@ export default {
     'Welcome to my Trading Service, thank you for choosing me. Quick Start: Type !HELP via SteamChat \n\n',
   trade: {
     message: {
+      sets: {
+        0: 'Here are {SETS} set(s).',
+        1: 'Here are {SETS} cards set(s) in exchange for {EVENTCARDS} {EVENTNAME} card(s). ',
+      },
       eventCards: {
         0: 'Here are {EVENTCARDS} {EVENTNAME} card(s).',
+        1: 'Here are {EVENTCARDS} {EVENTNAME} card(s) in exchange for {SETS} cards set(s). ',
       },
       csgo: {
         0: 'Here are {KEYS} CS:GO Key(s).',
@@ -65,6 +70,7 @@ export default {
     nonexistentoffer:
       'Offer with ID:{OFFERID} is not active, so it may not be cancelled.',
     inputinvalid: {
+      sets: 'Please provide a valid amount of sets - example: {command}',
       keys: 'Please provide a valid amount of keys - example: {command}',
       gems: 'Please provide a valid amount of gems - example: {command}',
       eventCards:
@@ -76,12 +82,14 @@ export default {
       message: 'Please enter a message',
       amountover: {
         keys: 'Please try a lower amount of key(s). The maximum amount for this command is {KEYS}.',
+        sets: 'Please try a lower amount of set(s). The maximum amount for this command is {SETS}.',
         gems: 'Please try a lower amount of gem(s). The maximum amount for this command is {GEMS}.',
         eventCards:
           'Please try a lower amount of {EVENTNAME} cards. The maximum amount for this command is {EVENTCARDS}.',
       },
       amountlow: {
         keys: "Sorry but I can't sell you nothing with that amount of key(s). - use: !PRICES \n",
+        sets: "Sorry but I can't sell you nothing with that amount of set(s). - use: !PRICES \n",
         gems: "Sorry but I can't sell you nothing with that amount of gem(s). - use: !PRICES \n",
         eventCards:
           "Sorry but I can't sell you nothing with that amount of {EVENTNAME} cards. - use: !PRICES \n",
@@ -101,6 +109,10 @@ export default {
 
     outofstock: {
       admin: {
+        sets: {
+          them: "You don't have enough sets to send. (You have {SETS} set(s))",
+          me: `The bot don't have enough sets to send. (He has {SETS} set(s))`,
+        },
         keys: {
           them: "You don't have enough keys to send. (You have {KEYS} key(s))",
           me: `The bot don't have enough keys to send. (He has {KEYS} key(s))`,
@@ -120,6 +132,10 @@ export default {
         leftover: `You don't have leftover cards.`,
       },
       common: {
+        sets: {
+          them: "You don't have enough sets. Please try again later.",
+          me: `I don't have enough sets. Please try again later.`,
+        },
         keys: {
           them: "You don't have enough keys. Please try again later.",
           me: `I don't have enough keys. Please try again later.`,
@@ -154,6 +170,7 @@ export default {
   unpack: 'Unpacked {BOOSTER} Booster Pack.',
   sellCheck: {
     currencies: {
+      sets: ' • {CARDS} {EVENTNAME} card(s) for {SETS} cards set(s) - !SELLSETS {SETS} \n ',
       csgo: ' • {CARDS} {EVENTNAME} card(s) for {KEYS} cs:go key(s) - !SELLCSGO {KEYS} \n ',
       hydra:
         ' • {CARDS} {EVENTNAME} card(s) for {KEYS} hydra key(s) - !SELLHYDRA {KEYS} \n ',
@@ -166,6 +183,7 @@ export default {
   },
   check: {
     currencies: {
+      sets: ' • {CARDS} {EVENTNAME} card(s) for {SETS} cards set(s) - !BUYSETS {SETS} \n ',
       csgo: ' • {CARDS} {EVENTNAME} card(s) for {KEYS} cs:go key(s) - !BUYCSGO {KEYS} \n ',
       hydra:
         ' • {CARDS} {EVENTNAME} card(s) for {KEYS} hydra key(s) - !BUYHYDRA {KEYS} \n ',
@@ -178,6 +196,7 @@ export default {
   },
 
   checkAmount: {
+    sets: '/pre With {SETS} set(s) you can get {EVENTCARDS} {EVENTNAME} card(s). \n\nInterested?, try: \n !BUYSETS {SETS}',
     csgo: '/pre With {KEYS} key(s) you can get {EVENTCARDS} {EVENTNAME} card(s). \n\nInterested?, try: \n !BUYCSGO {KEYS}',
     hydra:
       '/pre With {KEYS} key(s) you can get {EVENTCARDS} {EVENTNAME} card(s). \n\nInterested?, try: \n !BUYHYDRA {KEYS}',
@@ -188,6 +207,7 @@ export default {
   stock:
     '/pre I currently have in my inventory: \n' +
     ' • {EVENTCARDS} {EVENTNAME} card(s). \n' +
+    ' • {TOTALBOTSETS} cards set(s) from {VARIETYOFGAMES} Game(s). \n' +
     ' • {CSKEYSTRADABLE} tradable CS:GO key(s), and {CSKEYSNOTRADABLE} non-tradable CS:GO key(s). \n' +
     ' • {HYDRAKEYSTRADABLE} tradable HYDRA key(s), and {HYDRAKEYSNOTRADABLE} non-tradable HYDRA key(s). \n' +
     ' • {TFKEYSTRADABLE} tradable TF2 key(s), and {TFKEYSNOTRADABLE} non-tradable TF2 key(s). \n' +
@@ -196,11 +216,13 @@ export default {
   prices:
     '/pre Currently, prices are: \n\n' +
     '- You can buy: \n' +
+    ' • {SETSBUY} {EVENTNAME} card(s) for 1 cards set \n' +
     ' • {CSGOBUY} {EVENTNAME} card(s) for 1 CS:GO key  \n' +
     ' • {HYDRABUY} {EVENTNAME} card(s) for 1 HYDRA key \n' +
     ' • {TFBUY} {EVENTNAME} card(s) for 1 TF2 key \n' +
     ' • 1 {EVENTNAME} card for {GEMSBUY} gems\n\n' +
     '- You can sell: \n' +
+    ' • {SETSSELL} {EVENTNAME} card(s) for 1 cards set \n' +
     ' • {CSGOSELL} {EVENTNAME} card(s) for 1 CS:GO key  \n' +
     ' • {HYDRASELL} {EVENTNAME} card(s) for 1 HYDRA key \n' +
     ' • {TFSELL} {EVENTNAME} card(s) for 1 TF2 key \n' +
@@ -223,12 +245,14 @@ export default {
     '► !WITHDRAWHYDRA = Withdraw a specific amount of hydra keys. \n',
     '► !WITHDRAWTF = Withdraw a specific amount of tf2 keys. \n',
     '► !WITHDRAWGEMS = Withdraw a specific amount of gems. \n',
+    '► !WITHDRAWSETS = Withdraw a specific amount of sets. \n',
     '► !DEPOSITEVENTCARDS = eposits a specific amount of {EVENTNAME} cards. \n',
     '► !DEPOSITBOOSTER = Deposits a specific amount of booster. \n',
     '► !DEPOSITCSGO = Deposits a specific amount of cs:go keys. \n',
     '► !DEPOSITHYDRA = Deposits a specific amount of hydra keys. \n',
     '► !DEPOSITTF = Deposits a specific amount of tf2 keys. \n',
     '► !DEPOSITGEMS = Deposits a specific amount of gems. \n',
+    '► !DEPOSITSETS = Deposits a specific amount of sets. \n',
   ],
 
   commands: [
@@ -238,6 +262,10 @@ export default {
     '► !OWNER = Shows owner account. \n',
     '► !CHECK = Checks how many {EVENTNAME} card(s) you can buy. \n',
     '► !SELLCHECK = Checks how many {EVENTNAME} card(s) the bot can buy from you. \n\n',
+    'SETS Section. \n',
+    `► !CHECKSETS (amount_of_sets) = Shows how many {EVENTNAME} card(s) you'll receive, following bot rates. \n`,
+    '► !BUYSETS (amount_of_sets) = Buy {EVENTNAME} card(s) for a specific amount of cards set(s), following the current BOT rate. \n',
+    '► !SELLSETS (amount_of_sets) = Sell {EVENTNAME} card(s) and get a specific amount of cards set(s), following the current BOT rate.\n\n',
     'CSGO Section. \n',
     `► !CHECKCSGO (amount_of_keys) = Shows how many {EVENTNAME} card(s) you'll receive, following bot rates. \n`,
     '► !BUYCSGO (amount_of_keys) = Buy {EVENTNAME} card(s) for a specific amount of key(s), following the current BOT rate. \n',

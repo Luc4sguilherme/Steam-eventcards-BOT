@@ -45,7 +45,7 @@ client.on('webSession', async (value, cookies) => {
     config.identitySecret
   );
 
-  const load = ['GEMS', 'CSGO', 'EVENTCARDS', 'TF2', 'HYDRA'];
+  const load = ['GEMS', 'CSGO', 'EVENTCARDS', 'TF2', 'SETS', 'HYDRA'];
 
   await loadInventory(load);
 });

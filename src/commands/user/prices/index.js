@@ -9,6 +9,8 @@ export default (sender) => {
   chatMessage(
     sender,
     messages.prices
+      .replace('{SETSSELL}', rates.sell.sets)
+      .replace('{SETSBUY}', rates.buy.sets)
       .replace('{CSGOSELL}', rates.sell.csgo)
       .replace('{CSGOBUY}', rates.buy.csgo)
       .replace('{HYDRASELL}', rates.sell.hydra)

@@ -4,7 +4,7 @@ import log from '../../../components/log.js';
 import messages from '../../../config/messages.js';
 
 export default async (sender) => {
-  const load = ['GEMS', 'CSGO', 'EVENTCARDS', 'TF2', 'HYDRA'];
+  const load = ['GEMS', 'CSGO', 'EVENTCARDS', 'TF2', 'SETS', 'HYDRA'];
 
   chatMessage(sender, messages.request);
   log.adminChat(sender.getSteamID64(), '[ !RELOAD ]');

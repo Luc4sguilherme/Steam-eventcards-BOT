@@ -22,6 +22,7 @@ export default async (sender) => {
         const csgo = parseInt(amountCards / rates.buy.csgo, 10);
         const tf = parseInt(amountCards / rates.buy.tf, 10);
         const hydra = parseInt(amountCards / rates.buy.hydra, 10);
+        const sets = parseInt(amountCards / rates.buy.sets, 10);
         const gems = amountCards * rates.buy.gems;
 
         let message = ' ';
@@ -52,6 +53,13 @@ export default async (sender) => {
             .replace(/{CARDS}/g, amountCards)
             .replace(/{EVENTNAME}/g, main.eventName)
             .replace(/{GEMS}/g, gems);
+        }
+
+        if (sets > 0) {
+          message += messages.check.currencies.sets
+            .replace(/{CARDS}/g, sets * rates.buy.sets)
+            .replace(/{EVENTNAME}/g, main.eventName)
+            .replace(/{SETS}/g, sets);
         }
 
         if (!message.includes('•')) {

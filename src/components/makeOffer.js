@@ -9,6 +9,7 @@ export default (
   itemsFromThem,
   commandused,
   message,
+  amountofsets = 0,
   amountofeventcards = 0,
   amountofkeys = 0,
   amountofgems = 0
@@ -21,6 +22,10 @@ export default (
   log.tradeoffer('Creating trade offer');
 
   offer.data('commandused', commandused);
+
+  if (amountofsets) {
+    offer.data('amountofsets', amountofsets);
+  }
 
   if (amountofeventcards) {
     offer.data('amountofeventcards', amountofeventcards);

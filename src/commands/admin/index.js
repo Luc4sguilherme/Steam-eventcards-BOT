@@ -7,6 +7,7 @@ import depositGems from './deposit/gems/index.js';
 import depositTF from './deposit/tf2/index.js';
 import depositCSGO from './deposit/csgo/index.js';
 import depositHYDRA from './deposit/hydra/index.js';
+import depositSETS from './deposit/sets/index.js';
 import depositEventCards from './deposit/eventCard/index.js';
 import depositBooster from './deposit/booster/index.js';
 import withdrawGems from './withdraw/gems/index.js';
@@ -14,6 +15,7 @@ import withdrawTF from './withdraw/tf2/index.js';
 import withdrawCSGO from './withdraw/csgo/index.js';
 import withdrawHYDRA from './withdraw/hydra/index.js';
 import withdrawBooster from './withdraw/booster/index.js';
+import withdrawSETS from './withdraw/sets/index.js';
 import withdrawEventCards from './withdraw/eventCard/index.js';
 import { isValidCommand } from '../../components/utils.js';
 import cancel from './cancel/index.js';
@@ -61,6 +63,13 @@ export default (sender, msg) => {
     depositCSGO(sender, msg);
   } else if (isValidCommand(input, '!DEPOSITHYDRA | !HYDRADEPOSIT | !HYDP')) {
     depositHYDRA(sender, msg);
+  } else if (
+    isValidCommand(
+      input,
+      '!DEPOSITSETS | !DEPOSITSET | !SETSDEPOSIT | !SETDEPOSIT | !SEDP'
+    )
+  ) {
+    depositSETS(sender, msg);
   } else if (isValidCommand(input, '!DEPOSITEVENTCARDS | !EVDP')) {
     depositEventCards(sender, msg);
   } else if (isValidCommand(input, '!DEPOSITBOOSTER | !BODP')) {
@@ -88,6 +97,13 @@ export default (sender, msg) => {
     withdrawCSGO(sender, msg);
   } else if (isValidCommand(input, '!WITHDRAWHYDRA | !HYDRAWITHDRAW | !HYWD')) {
     withdrawHYDRA(sender, msg);
+  } else if (
+    isValidCommand(
+      input,
+      '!WITHDRAWSETS | !WITHDRAWSET | !SETSWITHDRAW | !SETWITHDRAW | !SEWD'
+    )
+  ) {
+    withdrawSETS(sender, msg);
   } else if (isValidCommand(input, '!WITHDRAWEVENTCARDS | !EVWD')) {
     withdrawEventCards(sender, msg);
   } else if (isValidCommand(input, '!WITHDRAWBOOSTER | !BOWD')) {

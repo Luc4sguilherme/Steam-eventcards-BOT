@@ -11,6 +11,7 @@ export default (sender) => {
   chatMessage(
     sender,
     messages.stock
+      .replace('{TOTALBOTSETS}', stock.totalBotSets)
       .replace('{VARIETYOFGAMES}', stock.varietyOfGames)
       .replace(/{EVENTNAME}/g, main.eventName)
       .replace('{EVENTCARDS}', stock.botEventCards.length)

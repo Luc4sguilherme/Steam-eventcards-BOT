@@ -128,6 +128,9 @@ log.tradesHistory = (offer) => {
 
   let data = `Command: ${offer.data('commandused')}`;
 
+  if (offer.data('amountofsets')) {
+    data += `\nSets: ${offer.data('amountofsets')}`;
+  }
   if (offer.data('amountofeventcards')) {
     data += `\nEventCards: ${offer.data('amountofeventcards')}`;
   }
