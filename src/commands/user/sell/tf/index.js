@@ -66,7 +66,6 @@ export default (sender, msg) => {
                     theirCards,
                     '!SELLTF',
                     message,
-                    0,
                     theirCards.length,
                     myKeys.length,
                     0

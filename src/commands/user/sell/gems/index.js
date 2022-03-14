@@ -80,7 +80,6 @@ export default (sender, msg) => {
                     theirCards,
                     '!SELLGEMS',
                     message,
-                    0,
                     theirCards.length,
                     0,
                     amountOfCards * rates.sell.gems

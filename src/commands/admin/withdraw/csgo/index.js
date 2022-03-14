@@ -56,7 +56,6 @@ export default (sender, msg) => {
             '!WITHDRAWCSGO',
             message,
             0,
-            0,
             amountkeys,
             0
           );

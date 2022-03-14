@@ -55,7 +55,6 @@ export default (sender, msg) => {
             '!WITHDRAWTF',
             message,
             0,
-            0,
             amountkeys,
             0
           );

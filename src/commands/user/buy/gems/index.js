@@ -77,7 +77,6 @@ export default (sender, msg) => {
                 [].concat(...theirGems),
                 '!BUYGEMS',
                 message,
-                0,
                 myCards.length,
                 0,
                 amountOfCards * rates.buy.gems

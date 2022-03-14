@@ -58,7 +58,6 @@ export default (sender, msg) => {
               '!DEPOSITCSGO',
               message,
               0,
-              0,
               amountkeys,
               0
             );

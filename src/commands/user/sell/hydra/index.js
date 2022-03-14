@@ -69,7 +69,6 @@ export default (sender, msg) => {
                     theirCards,
                     '!SELLHYDRA',
                     message,
-                    0,
                     theirCards.length,
                     myKeys.length,
                     0

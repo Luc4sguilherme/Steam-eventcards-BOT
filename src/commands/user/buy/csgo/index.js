@@ -65,7 +65,6 @@ export default (sender, msg) => {
                 [].concat(...theirKeys),
                 '!BUYCSGO',
                 message,
-                0,
                 myCards.length,
                 theirKeys.length,
                 0

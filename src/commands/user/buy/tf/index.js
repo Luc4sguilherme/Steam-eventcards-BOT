@@ -65,7 +65,6 @@ export default (sender, msg) => {
                 [].concat(...theirKeys),
                 '!BUYTF',
                 message,
-                0,
                 myCards.length,
                 theirKeys.length,
                 0

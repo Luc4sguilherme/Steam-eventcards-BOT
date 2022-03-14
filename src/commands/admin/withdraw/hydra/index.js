@@ -54,7 +54,6 @@ export default (sender, msg) => {
             '!WITHDRAWHYDRA',
             message,
             0,
-            0,
             amountkeys,
             0
           );

@@ -46,7 +46,6 @@ export default (sender, msg) => {
         [],
         '!WITHDRAWEVENTCARDS',
         message,
-        0,
         amountofCards,
         0,
         0

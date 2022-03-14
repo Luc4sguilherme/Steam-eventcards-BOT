@@ -68,7 +68,6 @@ export default (sender, msg) => {
                 [].concat(...theirKeys),
                 '!BUYHYDRA',
                 message,
-                0,
                 myCards.length,
                 theirKeys.length,
                 0

@@ -48,7 +48,6 @@ export default (sender, msg) => {
             [].concat(...theirCards),
             '!DEPOSITEVENTCARDS',
             message,
-            0,
             amountofCards,
             0,
             0

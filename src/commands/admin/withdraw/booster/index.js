@@ -50,7 +50,6 @@ export default (sender, msg) => {
             message,
             0,
             0,
-            0,
             0
           );
         }
