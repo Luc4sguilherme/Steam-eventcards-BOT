@@ -8,7 +8,7 @@ import rates from '../../../config/rates.js';
 
 export default async (sender) => {
   chatMessage(sender, messages.request);
-  log.userChat(sender.getSteamID64(), '[ !SELLCHECK ]');
+  log.userChat(sender.getSteamID64(), '[ !CHECK ]');
 
   getEventCards(client.steamID.getSteamID64(), async (error1, inv) => {
     if (!error1) {
